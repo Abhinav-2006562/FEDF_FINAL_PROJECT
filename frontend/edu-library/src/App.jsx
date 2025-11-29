@@ -8,7 +8,7 @@ import Register from './components/Register'; // New Import
 import AdminDashboard from './components/AdminDashboard';
 import UserDashboard from './components/UserDashboard';
 import ProvideFeedback from './components/ProvideFeedback';
-import ThankYou from './components/ThankYou';
+import Thankyou from './components/Thankyou';
 import './App.css';
 
 function App() {
