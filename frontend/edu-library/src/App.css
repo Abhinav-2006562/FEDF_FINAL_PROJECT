@@ -1,0 +1,226 @@
+/* src/App.css */
+
+/* 1. Import a nice Google Font */
+
+
+/* 2. Global Reset - Fixes the "Half Page" issue */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent side scrolling */
+}
+
+/* 3. Page Containers - These hold the Background Images */
+.page-container {
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Specific Backgrounds for each page */
+.bg-home {
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('image-lib.jpg');
+}
+
+.bg-admin {
+  background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('image-lib.jpg');
+}
+
+.bg-user {
+  background-image: linear-gradient(rgba(29, 151, 108, 0.8), rgba(147, 249, 185, 0.8)), url('image-lib.jpg');
+}
+
+/* 4. Navigation Bar (Top Right) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  width: 100%;
+  color: white;
+}
+
+.nav-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.nav-btn:hover {
+  background: white;
+  color: #333;
+  border-color: white;
+}
+
+/* 5. Center Content Styling */
+.hero-content {
+  flex: 1; /* Pushes content to fill space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.6;
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* 6. Login & Dashboard Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  margin: auto; /* Centers in flex container */
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  
+  /* CRITICAL FIXES BELOW */
+  background: #ffffff;  /* White background */
+  color: #333333;       /* DARK GRAY TEXT - This makes it visible */
+  outline: none;        /* Removes default blue border */
+}
+
+input::placeholder {
+  color: #888;          /* Makes placeholder text visible but lighter */
+}
+
+input:focus {
+  border-color: #4facfe; /* Highlights box when you type */
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-top: 10px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Special Button Colors */
+.btn-primary { background: linear-gradient(45deg, #4facfe, #00f2fe); }
+.btn-success { background: linear-gradient(45deg, #43e97b, #38f9d7); color: #333; }
+.btn-danger { background: linear-gradient(45deg, #ff9a9e, #fad0c4); color: #c0392b; }
+
+/* Dashboard Lists */
+ul { list-style: none; margin-top: 20px; }
+li {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(5px);
+}
+
+/* Tab Buttons */
+.tab-btn {
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #444;
+  margin-top: 0; /* Override default button margin */
+  width: auto; /* Allow auto width */
+}
+
+/* Hover Effect */
+.tab-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* Active Tab (Selected) */
+.tab-btn.active {
+  background: #333;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Adjustments for Mobile */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+    }
+}
